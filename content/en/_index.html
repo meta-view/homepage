@@ -9,7 +9,7 @@ linkTitle = "MetaView"
     <a class="btn btn-lg btn-primary mr-3 mb-4" href="https://github.com/phaus/meta-view-service/blob/master/README.md">
         Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
     </a>
-    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="github.com/phaus/meta-view-service/">
+    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/phaus/meta-view-service/">
         See current development <i class="fab fa-github ml-2 "></i>
     </a>
     <p class="lead mt-5">Reclaim you personal data!</p>
@@ -18,9 +18,15 @@ linkTitle = "MetaView"
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="primary" %}}
-TBD
+<h2>Test the nightly release by your own</h2>
+
+<pre>
+    docker run -v $PWD/data:/data -p 9000:9000 phaus/meta-view-service:latest
+</pre>
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" >}}
-TBD
+<h2>Request a data export now!</h2>
+
+Using this <a target="_new" href="https://github.com/phaus/meta-list">list</a>
 {{< /blocks/section >}}

@@ -8,7 +8,7 @@ RUN cd themes/docsy && git submodule update --init --recursive
 FROM phaus/hugo:0.63.2
 COPY --from=0 /data /data 
 WORKDIR /data
-RUN apk --update add nodejs npm \
+RUN apk --update add nodejs npm git \
     && npm install -D --save autoprefixer \
     && npm install -D --save postcss-cli \
     && rm -rf /var/lib/apt/lists/* \

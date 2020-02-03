@@ -1,5 +1,6 @@
 config.toml
 .envrc
+node_modules
 resources
 themes
 public

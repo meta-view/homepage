@@ -55,8 +55,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "MetaView"
+description = "Reclaim you personal data!"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -71,9 +71,9 @@ time_format_blog = "02.01.2006"
 
 # Everything below this are Site Params
 
-[params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+#[params]
+#copyright = "The Docsy Authors"
+#privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]

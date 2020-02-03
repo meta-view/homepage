@@ -13,7 +13,8 @@ RUN apk --update add nodejs npm \
     && npm install -D --save postcss-cli \
     && rm -rf /var/lib/apt/lists/* \
     && rm /var/cache/apk/*
-RUN /usr/local/hugo
+RUN rm -rf /data/public/* \
+    && /usr/local/hugo
 
 FROM nginx:alpine
 LABEL maintainer="admin@go-rr.de"

@@ -60,7 +60,7 @@ description = "Reclaim you personal data!"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-contentDir = "content/no"
+contentDir = "content/en"
 time_format_default = "02.01.2006"
 time_format_blog = "02.01.2006"
 
@@ -125,15 +125,15 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
-	name ="@_meta_view"
-	url = "twitter.com/_meta_view"
-	icon = "fab fa-twitter"
+    name ="@_meta_view"
+    url = "https://twitter.com/_meta_view"
+    icon = "fab fa-twitter"
         desc = "Follow us on Twitter to get the latest news!"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
-	name = "GitHub"
-	url = "https://github.com/phaus/meta-view-service/"
-	icon = "fab fa-github"
+    name = "GitHub"
+    url = "https://github.com/phaus/meta-view-service/"
+    icon = "fab fa-github"
         desc = "Development takes place here!"
 
 EOF

@@ -18,15 +18,40 @@ linkTitle = "MetaView"
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="primary" %}}
-<h2>Test the nightly release by your own</h2>
-
-<pre>
-    docker run -v $PWD/data:/data -p 9000:9000 phaus/meta-view-service:latest
-</pre>
+<h1 class="text-center">
+Request a data export now!
+<br />
+Using this <a target="_new" href="https://github.com/phaus/meta-list">list</a>
+</h1>
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" >}}
-<h2>Request a data export now!</h2>
+{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
+The Goldydocs UI now shows chair size metrics by default.
 
-Using this <a target="_new" href="https://github.com/phaus/meta-list">list</a>
+Please follow this space for updates!
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/phaus/meta-view-service" %}}
+We do a [Pull Request](https://github.com/phaus/meta-view-service/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/_meta_view" %}}
+For announcement of latest features etc.
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}
+
+{{< blocks/section >}}
+<div class="col">
+    <h1 class="text-center">Test a nightly release!</h1>
+</div>
+{{< /blocks/section >}}
+
+{{< blocks/section >}}
+<div class="col">
+    <h2 class="text-center">
+        <code>docker run -v $PWD/data:/data -p 9000:9000 phaus/meta-view-service:latest</code>
+    </h2>
+</div>
 {{< /blocks/section >}}

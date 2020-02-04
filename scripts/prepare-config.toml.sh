@@ -83,9 +83,9 @@ time_format_blog = "02.01.2006"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://git-lab.de/meta-view/homepage.git"
+github_repo = "https://github.com/meta-view"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://git-lab.de/meta-view/homepage"
+github_project_repo = "https://github.com/meta-view"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -132,7 +132,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
     name = "GitHub"
-    url = "https://github.com/phaus/meta-view-service/"
+    url = "https://github.com/meta-view"
     icon = "fab fa-github"
         desc = "Development takes place here!"
 

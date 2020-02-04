@@ -6,10 +6,10 @@ linkTitle = "MetaView"
 
 {{< blocks/cover title="Welcome to Meta-View!" image_anchor="top" height="full" color="orange" >}}
 <div class="mx-auto">
-    <a class="btn btn-lg btn-primary mr-3 mb-4" href="https://github.com/phaus/meta-view-service/blob/master/README.md">
+    <a class="btn btn-lg btn-primary mr-3 mb-4" href="https://github.com/meta-view/data-import/blob/master/README.md">
         Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
     </a>
-    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/phaus/meta-view-service/">
+    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/meta-view">
         See current development <i class="fab fa-github ml-2 "></i>
     </a>
     <p class="lead mt-5">Reclaim you personal data!</p>
@@ -21,17 +21,19 @@ linkTitle = "MetaView"
 <h1 class="text-center">
 Request a data export now!
 <br />
-Using this <a target="_new" href="https://github.com/phaus/meta-list">list</a>
+Using this <a target="_new" href="https://github.com/meta-view/service-links/blob/master/README.md">list</a>
 </h1>
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" >}}
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/phaus/meta-view-service" %}}
-We do a [Pull Request](https://github.com/phaus/meta-view-service/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/meta-view/data-import" %}}
+We do a [Pull Request](https://github.com/meta-view/data-import/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
-{{% blocks/feature %}}
+{{< blocks/section color="dark" >}}
+{{% blocks/feature icon="fa-lightbulb" title="We want to hear from you!" %}}
+If you have any ideas or use cases, please leave them in our <a href="https://github.com/meta-view/data-import/issues" target="_new">issue tracker</a>.
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/_meta_view" %}}
@@ -49,7 +51,7 @@ For announcement of latest features etc.
 {{< blocks/section >}}
 <div class="col">
     <h2 class="text-center">
-        <code>docker run -v $PWD/data:/data -p 9000:9000 phaus/meta-view-service:latest</code>
+        <code>docker run -v $PWD/data:/data -p 9000:9000 mvapps/data-import:latest</code>
     </h2>
 </div>
 {{< /blocks/section >}}

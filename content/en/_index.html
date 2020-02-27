@@ -44,11 +44,19 @@ For announcement of latest features etc.
 {{< blocks/section >}}
 <div class="col">
     <h1 class="text-center">Test the latest nightly release!</h1>
+    <br />
+    <h2 class="text-center">
+        <code>
+docker run -v $PWD/data:/data -p 9000:9000 mvapps/data-import:latest
+        </code>
+    </h2>
 </div>
 {{< /blocks/section >}}
 
 {{< blocks/section >}}
 <div class="col">
+    <h1 class="text-center">Update to the most recent version.</h1>
+    <br />
     <h2 class="text-center">
         <code>
 docker pull mvapps/data-import:latest && \<br />

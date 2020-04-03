@@ -71,7 +71,7 @@ time_format_blog = "02.01.2006"
 
 # Everything below this are Site Params
 
-#[params]
+[params]
 #copyright = "The Docsy Authors"
 #privacy_policy = "https://policies.google.com/privacy"
 

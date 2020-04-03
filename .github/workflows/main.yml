@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -14,8 +14,8 @@ jobs:
       with:
         args: "https://gitlab.com/<namespace>/<repository>"
       env:
+        GITLAB_HOST: "git-lab.de"
         GITLAB_REPOSITORY: "git@git-lab.de:meta-view/homepage.git"
-        GITLAB_HOST_KEY: ${{ secrets.GITLAB_HOST_KEY }}
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SRC_BRANCH: "master"
         DST_BRANCH: "master"

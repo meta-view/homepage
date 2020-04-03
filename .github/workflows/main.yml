@@ -1,0 +1,21 @@
+name: Push to Gitlab
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Push to Gitlab
+      uses: phaus/gitlab-push-action@master
+      with:
+        args: "https://gitlab.com/<namespace>/<repository>"
+      env:
+        GITLAB_REPOSITORY: ${{ secrets.GITLAB_REPOSITORY }}
+        GITLAB_HOST_KEY: ${{ secrets.GITLAB_HOST_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SRC_BRANCH: ${{ secrets.SRC_BRANCH }}
+        DST_BRANCH: ${{ secrets.DST_BRANCH }}

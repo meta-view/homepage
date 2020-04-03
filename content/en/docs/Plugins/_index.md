@@ -41,7 +41,7 @@ ContentType of verified.js is application/octet-stream
 
 ## Plugin API
 
-At the moment the plugin JS API has two methods on hand: 
+At the moment the plugin JS API has two methods on hand:  
 
 * `getFiles()` - a method that lists all files rooted in the payload folder.
 * `getContentType(…)` - a method to determine the content type of the given file.

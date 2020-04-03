@@ -12,7 +12,7 @@ services:
   $CI_PROJECT_NAME:
     image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
     container_name: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
-    restart: always    
+    restart: always
     labels:
       - traefik.backend=$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
       - traefik.frontend.rule=Host:$APP_DEPLOY_URL

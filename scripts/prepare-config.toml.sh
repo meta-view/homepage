@@ -83,7 +83,7 @@ time_format_blog = "02.01.2006"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/meta-view"
+github_repo = "https://github.com/meta-view/homepage"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/meta-view"
 

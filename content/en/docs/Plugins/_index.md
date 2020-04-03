@@ -1,7 +1,7 @@
 ---
 title: "Plugins"
 linkTitle: "Plugins"
-weight: 2
+weight: 3
 description: >
   Plugins are the logic of the application.
 ---
@@ -47,3 +47,4 @@ At the moment the plugin JS API has two methods on hand:
 * `getContentType(…)` - a method to determine the content type of the given file.
 
 You can see an example uses in the file [detector.js](plugins/twitter.com/detector.js) of the twitter plugin.
+

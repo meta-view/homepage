@@ -25,3 +25,4 @@ This will be done, if a working update solution was implemented.
 * adding a wizard for step by step import of user data: ❌
 * Creating analysis function (time-based, geographical, structural): ❌
 * … (feel free to leave an idea in the issues)
+

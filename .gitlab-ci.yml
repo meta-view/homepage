@@ -9,15 +9,12 @@ variables:
   APP_TITLE: "meta-view.de"
   DOCKER_IMAGE_TAGGED: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   DOCKER_IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_TLS_CERTDIR: ""
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://localhost:2375
 
 docker_build:
   stage: build
-  image: docker:19.03.0
+  image: docker:18.09.7
   services:
-    - docker:19.03.0-dind
+    - docker:18.09.7-dind
   script:
     - mkdir $CI_PROJECT_DIR/public
     - sh ./scripts/prepare-config.toml.sh > $CI_PROJECT_DIR/config.toml
@@ -27,9 +24,9 @@ docker_build:
 
 docker_tag:
   stage: publish
-  image: docker:19.03.0
+  image: docker:18.09.7
   services:
-    - docker:19.03.0-dind
+    - docker:18.09.7-dind
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $DOCKER_IMAGE_TAGGED

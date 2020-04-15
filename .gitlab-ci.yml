@@ -9,8 +9,9 @@ variables:
   APP_TITLE: "meta-view.de"
   DOCKER_IMAGE_TAGGED: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   DOCKER_IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_TLS_CERTDIR: "/certs"
+  DOCKER_TLS_CERTDIR: ""
   DOCKER_DRIVER: overlay2
+  DOCKER_HOST: tcp://docker:2375
 
 docker_build:
   stage: build

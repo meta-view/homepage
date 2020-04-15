@@ -9,16 +9,20 @@ variables:
   APP_TITLE: "meta-view.de"
   DOCKER_IMAGE_TAGGED: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   DOCKER_IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_HOST: tcp://docker:2375
-  #
-  # This will instruct Docker not to start over TLS.
-  DOCKER_TLS_CERTDIR: ""
 
 docker_build:
   stage: build
-  image: docker:19.03.8
+  image: docker:19.03.1
   services:
-    - docker:19.03.8-dind
+    - docker:19.03.1-dind
+  variables:
+    # For non-Kubernetes executors, we use tcp://docker:2375/
+    DOCKER_HOST: tcp://docker:2375/
+    # When using dind, it's wise to use the overlayfs driver for
+    # improved performance.
+    DOCKER_DRIVER: overlay2
+    # This will instruct Docker not to start over TLS.
+    DOCKER_TLS_CERTDIR: ""
   script:
     - mkdir $CI_PROJECT_DIR/public
     - sh ./scripts/prepare-config.toml.sh > $CI_PROJECT_DIR/config.toml
@@ -28,9 +32,17 @@ docker_build:
 
 docker_tag:
   stage: publish
-  image: docker:19.03.8
+  image: docker:19.03.1
   services:
-    - docker:19.03.8-dind
+    - docker:19.03.1-dind
+  variables:
+    # For non-Kubernetes executors, we use tcp://docker:2375/
+    DOCKER_HOST: tcp://docker:2375/
+    # When using dind, it's wise to use the overlayfs driver for
+    # improved performance.
+    DOCKER_DRIVER: overlay2
+    # This will instruct Docker not to start over TLS.
+    DOCKER_TLS_CERTDIR: ""
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $DOCKER_IMAGE_TAGGED
@@ -41,21 +53,6 @@ docker_tag:
 
 deploy_prod:
   stage: deploy
-  image: innoq/gitlabci-docker-compose:alpine
-  variables:
-    APP_DEPLOY_URL: $APP_URL
-  script:
-    - sh ./scripts/prepare-docker-compose.sh > docker-compose.yml
-    - echo "Deploying https://${APP_URL}"
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker-compose -p $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME up -d --remove-orphans
-  tags:
-    - run.consolving.net
-  only:
-    - master
-  environment:
-    name: production
-    url: https://$APP_URL
   image: innoq/gitlabci-docker-compose:alpine
   variables:
     APP_DEPLOY_URL: $APP_URL

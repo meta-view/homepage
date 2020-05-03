@@ -56,11 +56,12 @@ deploy_prod:
   image: innoq/gitlabci-docker-compose:alpine
   variables:
     APP_DEPLOY_URL: $APP_URL
+    APP_DEPLOY_NAME: $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
   script:
     - sh ./scripts/prepare-docker-compose.sh > docker-compose.yml
     - echo "Deploying https://${APP_URL}"
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker-compose -p $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME up -d --remove-orphans
+    - docker-compose -p $APP_DEPLOY_NAME up -d --remove-orphans
   tags:
     - run.consolving.net
   only:

@@ -3,10 +3,8 @@ cat << EOF
 version: "3"
 
 networks:
-  proxy:
+  traefik_default:
     external: true
-  internal:
-    external: false
 
 services:
   $CI_PROJECT_NAME:
@@ -14,11 +12,11 @@ services:
     container_name: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
     restart: always
     labels:
-      - traefik.backend=$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
-      - traefik.frontend.rule=Host:$APP_DEPLOY_URL
-      - traefik.docker.network=proxy
-      - traefik.port=$APP_PORT
+      - "traefik.http.routers.$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.rule=Host(\`$APP_DEPLOY_URL\`)"
+      - "traefik.http.routers.$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.entrypoints=websecure"
+      - "traefik.http.routers.$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.tls=true"
+      - "traefik.http.routers.$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.tls.certresolver=leresolver"
+      - "traefik.http.services.$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.loadbalancer.server.port=$APP_PORT"
     networks:
-      - internal
-      - proxy
+      - traefik_default
 EOF

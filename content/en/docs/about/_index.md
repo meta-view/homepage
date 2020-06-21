@@ -25,9 +25,9 @@ So after years of sleep and after I was able to add some more tricks to my tools
 
 ## About the Team
 
-### phaus
-
 <img src="team/phaus.png" alt="Avatar of phaus" class="avatar" />
+
+### @phaus
 
 My name is Philipp, I am a Software Engineer, living in Germany. I am always eager to find elegant solutions for existing problems, so this project is a perfect opportunity :-).  
 I think that most situations only exist out of convenience. You really never know, what happen if you do things differently if you don't at least try.  

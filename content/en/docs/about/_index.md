@@ -29,8 +29,8 @@ So after years of sleep and after I was able to add some more tricks to my tools
 
 <img src="team/phaus.png" alt="Avatar of phaus" class="avatar" />
 
-My name is Philipp, I am a Software Engineer, living in Germany. I am always eager to find elegant solutions for existing problems, so this project is a perfect opportunity :-).
-I think that most situations only exist out of convenience. You really never know, what happen if you do things differently if you don't at least try.
+My name is Philipp, I am a Software Engineer, living in Germany. I am always eager to find elegant solutions for existing problems, so this project is a perfect opportunity :-).  
+I think that most situations only exist out of convenience. You really never know, what happen if you do things differently if you don't at least try.  
 
 I have a strong background in Java and Go, but I am also able to deliver appealing UIs.
 Additionaly I will also try to steer the overall system design and project organisation.

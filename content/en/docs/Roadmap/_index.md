@@ -16,7 +16,7 @@ Hence we decided to go with the following roadmap approach.
 We are using the Dual-Track product development method to achive the different project goals.
 Our long term view looks like this:
 
-![Development-Roadmap](Roadmap1.svg)
+<img alt="Development-Roadmap" src="roadmap.svg" />
 
 We are using the Discovery track to identify the technologies, we can use to implement the spefic details in the devlivery track.   
 While the Code in the delivery track will be continously extended and updates, every piece of code in the discovery track will be abandoned after the specific implementation goal is reach.
@@ -59,7 +59,7 @@ At the end, import, export, publishing and unpublishing of your data should be p
 
 ## Data Exchange
 
-<div style="height: 24px; background-color:#ff1313"></div>
+<div style="height: 24px; background-color:#710042"></div>
 
 The final goal is, to make the current data providers optional.
 We would like to have two instances of our application exchange data directly.

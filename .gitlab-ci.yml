@@ -13,16 +13,6 @@ variables:
 docker_build:
   stage: build
   image: docker:19.03.1
-  services:
-    - docker:19.03.1-dind
-  variables:
-    # For non-Kubernetes executors, we use tcp://docker:2375/
-    DOCKER_HOST: tcp://docker:2375/
-    # When using dind, it's wise to use the overlayfs driver for
-    # improved performance.
-    DOCKER_DRIVER: overlay2
-    # This will instruct Docker not to start over TLS.
-    DOCKER_TLS_CERTDIR: ""
   script:
     - mkdir $CI_PROJECT_DIR/public
     - sh ./scripts/prepare-config.toml.sh > $CI_PROJECT_DIR/config.toml
@@ -33,16 +23,6 @@ docker_build:
 docker_tag:
   stage: publish
   image: docker:19.03.1
-  services:
-    - docker:19.03.1-dind
-  variables:
-    # For non-Kubernetes executors, we use tcp://docker:2375/
-    DOCKER_HOST: tcp://docker:2375/
-    # When using dind, it's wise to use the overlayfs driver for
-    # improved performance.
-    DOCKER_DRIVER: overlay2
-    # This will instruct Docker not to start over TLS.
-    DOCKER_TLS_CERTDIR: ""
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $DOCKER_IMAGE_TAGGED

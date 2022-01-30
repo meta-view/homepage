@@ -5,7 +5,7 @@ RUN rm -rf themes/*
 RUN git clone https://github.com/google/docsy.git themes/docsy
 RUN cd themes/docsy && git submodule update --init --recursive
 
-FROM phaus/hugo:0.63.2
+FROM phaus/hugo:0.92.1
 COPY --from=0 /data /data 
 WORKDIR /data
 RUN apk --update add nodejs npm git \
@@ -16,5 +16,5 @@ RUN apk --update add nodejs npm git \
 RUN /usr/local/hugo --cleanDestinationDir
 
 FROM nginx:alpine
-LABEL maintainer="admin@go-rr.de"
+LABEL maintainer="philipp@haussleiter.de"
 COPY --from=1 /data/public /usr/share/nginx/html

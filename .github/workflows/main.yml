@@ -17,5 +17,5 @@ jobs:
         GITLAB_HOST: "git-lab.de"
         GITLAB_REPOSITORY: "git@git-lab.de:meta-view/homepage.git"
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SRC_BRANCH: "master"
-        DST_BRANCH: "master"
+        SRC_BRANCH: ${{ env.SRC_BRANCH }}
+        DST_BRANCH: ${{ env.DST_BRANCH }}

@@ -5,14 +5,16 @@ RUN rm -rf themes/*
 RUN git clone https://github.com/google/docsy.git themes/docsy
 RUN cd themes/docsy && git submodule update --init --recursive
 
-FROM phaus/hugo:0.92.1
+FROM phaus/hugo:latest
 COPY --from=0 /data /data 
 WORKDIR /data
-RUN apk --update add nodejs npm git \
-    && npm install -D --save autoprefixer \
-    && npm install -D --save postcss-cli \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm /var/cache/apk/*
+RUN apk --update add nodejs npm git
+#RUN npm i
+RUN npm install --save-dev autoprefixer
+RUN npm install --save-dev postcss-cli
+RUN npm install -D postcss
+RUN rm -rf /var/lib/apt/lists/*
+RUN rm /var/cache/apk/*
 RUN /usr/local/hugo --cleanDestinationDir
 
 FROM nginx:alpine

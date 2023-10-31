@@ -33,7 +33,7 @@ docker_tag:
 
 deploy_prod:
   stage: deploy
-  image: innoq/gitlabci-docker-compose:alpine
+  image: git-lab.de:5001/consolving/gitlabci-docker-compose:alpine
   variables:
     APP_DEPLOY_URL: $APP_URL
     APP_DEPLOY_NAME: $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG

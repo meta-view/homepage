@@ -20,6 +20,8 @@
         "postcss": "^8.2.13"
     },
     "devDependencies": {
+        "hugo-extended": "0.104.3",
+        "bootstrap-sass": "^3.3.7", 
         "autoprefixer": "^10.4.2",
         "postcss-cli": "^9.1.0"
     }

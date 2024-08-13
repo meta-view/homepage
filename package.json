@@ -16,13 +16,11 @@
         "url": "https://github.com/bep/tech-doc-hugo/issues"
     },
     "homepage": "https://github.com/bep/tech-doc-hugo#readme",
-    "dependencies": {
-        "postcss": "^8.2.13"
-    },
     "devDependencies": {
-        "hugo-extended": "0.104.3",
-        "bootstrap-sass": "^3.3.7", 
-        "autoprefixer": "^10.4.2",
-        "postcss-cli": "^9.1.0"
+        "autoprefixer": "^10.4.20",
+        "bootstrap-sass": "^3.3.7",
+        "hugo-extended": "0.120.3",
+        "postcss": "^8.4.41",
+        "postcss-cli": "^10.1.0"
     }
 }

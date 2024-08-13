@@ -6,7 +6,12 @@ title = "$APP_TITLE"
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
+# theme = ["docsy"]
+
+[module]
+replacements = "github.com/FortAwesome/Font-Awesome -> ., github.com/twbs/bootstrap -> ."
+[[module.imports]]
+path = "docsy"
 
 # Will give values to .Lastmod etc.
 enableGitInfo = true
@@ -54,7 +59,7 @@ anchor = "smart"
 # Language configuration
 
 [languages]
-[languages.en]
+[languages.en.params]
 title = "MetaView"
 description = "Reclaim you personal data!"
 languageName ="English"
@@ -94,7 +99,7 @@ github_project_repo = "https://github.com/meta-view"
 #gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+search.algolia = false
 
 # Enable Lunr.js offline search
 offlineSearch = false

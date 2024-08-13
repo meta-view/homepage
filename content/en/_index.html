@@ -4,18 +4,18 @@ linkTitle = "MetaView"
 
 +++
 
-{{< blocks/cover title="Welcome to Meta-View!" image_anchor="top" height="full" color="orange" >}}
+{{% blocks/cover title="Welcome to Meta-View!" image_anchor="top" height="full" color="orange" %}}
 <div class="mx-auto">
-    <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+    <a class="btn btn-lg btn-primary mr-3 mb-4" href="/docs">
         Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
     </a>
     <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/meta-view">
         See current development <i class="fab fa-github ml-2 "></i>
     </a>
     <p class="lead mt-5">Reclaim your personal data!</p>
-    {{< blocks/link-down color="info" >}}
+    {{% blocks/link-down color="info" %}}
 </div>
-{{< /blocks/cover >}}
+{{% /blocks/cover %}}
 
 {{% blocks/lead color="primary" %}}
 <h1 class="text-center">
@@ -25,7 +25,7 @@ Using this <a target="_new" href="https://github.com/meta-view/service-links/blo
 </h1>
 {{% /blocks/lead %}}
 
-{{< blocks/section color="dark" >}}
+{{% blocks/section color="dark" %}}
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/meta-view/data-import" %}}
 We do a [Pull Request](https://github.com/meta-view/data-import/pulls) contributions workflow on **GitHub**. New users are always welcome!
@@ -39,9 +39,9 @@ If you have any ideas or use cases, please leave them in our <a href="https://gi
 For announcement of latest features etc.
 {{% /blocks/feature %}}
 
-{{< /blocks/section >}}
+{{% /blocks/section %}}
 
-{{< blocks/section >}}
+{{% blocks/section %}}
 <div class="col">
     <h1 class="text-center">Test the latest nightly release!</h1>
     <br />
@@ -51,9 +51,9 @@ docker run -v $PWD/data:/data -p 9000:9000 mvapps/data-import:latest
         </code>
     </h2>
 </div>
-{{< /blocks/section >}}
+{{% /blocks/section %}}
 
-{{< blocks/section >}}
+{{% blocks/section %}}
 <div class="col">
     <h1 class="text-center">Update to the most recent version.</h1>
     <br />
@@ -64,4 +64,4 @@ docker run -v $PWD/data:/data -p 9000:9000 mvapps/data-import:latest
         </code>
     </h2>
 </div>
-{{< /blocks/section >}}
+{{% /blocks/section %}}

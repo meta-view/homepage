@@ -19,7 +19,10 @@ docker_build:
     - docker build -t $DOCKER_IMAGE_TAGGED .
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker push $DOCKER_IMAGE_TAGGED
-
+  artifacts:
+    paths: 
+      - /root/.npm/_logs/*.log
+    untracked: false
 docker_tag:
   stage: publish
   image: docker:19.03.1

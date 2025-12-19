@@ -10,7 +10,9 @@ services:
   $CI_PROJECT_NAME:
     image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
     container_name: $APP_DEPLOY_NAME
-    restart: always
+    restart: unless-stopped
+    security_opt:
+      - apparmor=unconfined
     labels:
       - "traefik.http.routers.$APP_DEPLOY_NAME.rule=Host(\`$APP_DEPLOY_URL\`)"
       - "traefik.http.routers.$APP_DEPLOY_NAME.entrypoints=websecure"
